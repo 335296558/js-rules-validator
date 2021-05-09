@@ -76,12 +76,12 @@
 ## 浏览器用法
 ```
 <script src="../lib/RuleValidator.js"></script>
+DEMO示例请看 ./demo/index.html
 
 ```
 
-## 最后，DEMO示例请看 ./demo/index.html
-## 版本日志
-#### v1.0.0
+##### 版本日志
+###### v1.0.0
 
 ## License
 ISC
