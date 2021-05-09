@@ -1,0 +1,51 @@
+{
+  "name": "RuleValidator",
+  "version": "1.0.0",
+  "description": "基于 async-validator 库 https://github.com/yiminghe/async-validator 封装的规则验证插件，支持浏览器与node",
+  "main": "index.js",
+  "scripts": {
+    "dev": "rollup -c --watch",
+    "build": "cross-env ENV=prod rollup -c",
+    "build:prod": "cross-env ENV=prod rollup -c",
+    "build:dev": "cross-env ENV=dev rollup -c",
+    "deploy": "npm publish",
+    "remove": "npm unpublish RuleValidator@1.0.0",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitee.com:RainBow8/RuleValidator.git"
+  },
+  "bugs": {
+    "url": "https://gitee.com/RainBow8/RuleValidator/-/issues"
+  },
+  "keywords": [
+    "RuleValidator",
+    "RuleValidator.io",
+    "RuleValidator-client"
+  ],
+  "author": "335396558@qq.com",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.10.5",
+    "@babel/plugin-proposal-private-methods": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-es2015": "^7.0.0-beta.53",
+    "babel-preset-stage-0": "^6.24.1",
+    "cross-env": "^7.0.2",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-cleaner": "^1.0.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-serve": "^1.1.0",
+    "rollup-plugin-uglify": "^6.0.4"
+  },
+  "dependencies": {
+    "async-validator": "^3.5.2"
+  },
+  "directories": {
+    "lib": "lib"
+  }
+}
