@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/335296558/js-validator"
+    "url": "git@github.com:335296558/js-validator.git"
   },
   "bugs": {
     "url": "https://github.com/335296558/js-validator/-/issues"
