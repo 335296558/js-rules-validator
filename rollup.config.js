@@ -11,9 +11,9 @@ import serve from 'rollup-plugin-serve'
 export default {
     input: main,
     output: {
-        file: `lib/RuleValidator.js`,
+        file: `lib/js-validator.js`,
         format: 'umd',
-        name: 'RuleValidator',
+        name: 'validator',
         sourcemap: true,
         exports: 'default'
     },

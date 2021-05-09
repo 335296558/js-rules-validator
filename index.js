@@ -9,7 +9,7 @@ import RulesConfig from './rules.config';
 const red = '\x1b[91m';
 const Blue = '\x1b[36m%s\x1b[0m';
 
-export default class RuleValidator {
+export default class validator {
     constructor(rules={}, debug){
         this.debug = Boolean(debug)
         debug && console.log(Blue, 'messages ==>>', AsyncValidator.messages)
@@ -23,7 +23,7 @@ export default class RuleValidator {
      * @param {*} rules
      * @param {*} query
      * @returns
-     * @memberof RuleValidator
+     * @memberof validator
      */
     censor(rules, query) {
         if (!rules || !query) {

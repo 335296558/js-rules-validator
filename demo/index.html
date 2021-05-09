@@ -1,8 +1,8 @@
 <html>
-<title>RuleValidator</title>
+<title>js-validator</title>
 <head>
     <meta data-n-head="1" name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
-    <script src="../lib/RuleValidator.js"></script>
+    <script src="../lib/js-validator.js"></script>
 </head>
 <body>
     
@@ -45,7 +45,7 @@
             ],
         };
 
-        const valid = new RuleValidator({
+        const valid = new validator({
             // 可扩展正则
             oneNine2: {
                 value: /(^\d{15}$)|(^\d{17}([0-9]|X)$)/,

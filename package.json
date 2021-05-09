@@ -1,5 +1,5 @@
 {
-  "name": "RuleValidator",
+  "name": "js-validator",
   "version": "1.0.0",
   "description": "基于 async-validator 库 https://github.com/yiminghe/async-validator 封装的规则验证插件，支持浏览器与node",
   "main": "index.js",
@@ -9,20 +9,20 @@
     "build:prod": "cross-env ENV=prod rollup -c",
     "build:dev": "cross-env ENV=dev rollup -c",
     "deploy": "npm publish",
-    "remove": "npm unpublish RuleValidator@1.0.0",
+    "remove": "npm unpublish js-validator@1.0.0",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git@gitee.com:RainBow8/RuleValidator.git"
+    "url": "git@gitee.com:RainBow8/js-validator.git"
   },
   "bugs": {
-    "url": "https://gitee.com/RainBow8/RuleValidator/-/issues"
+    "url": "https://gitee.com/RainBow8/js-validator/-/issues"
   },
   "keywords": [
-    "RuleValidator",
-    "RuleValidator.io",
-    "RuleValidator-client"
+    "js-validator",
+    "js-validator.io",
+    "js-validator-client"
   ],
   "author": "335396558@qq.com",
   "license": "ISC",

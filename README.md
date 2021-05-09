@@ -10,7 +10,7 @@
 ## 用法
 ```
 <script>
-  import validator from 'RuleValidator';
+  import validator from 'js-validator';
   const rules = {
       aa: [
           { required: true, message: '请填写活动形式', trigger: 'blur' },
@@ -48,7 +48,7 @@
       ],
   };
 
-  const valid = new RuleValidator({
+  const valid = new validator({
       // 可扩展正则
       idd: {
           value: /(^\d{15}$)|(^\d{17}([0-9]|X)$)/,
@@ -75,7 +75,7 @@
 ```
 ## 浏览器用法
 ```
-<script src="../lib/RuleValidator.js"></script>
+<script src="../lib/validator.js"></script>
 DEMO示例请看 ./demo/index.html
 
 ```
