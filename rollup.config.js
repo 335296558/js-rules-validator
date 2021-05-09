@@ -11,7 +11,7 @@ import serve from 'rollup-plugin-serve'
 export default {
     input: main,
     output: {
-        file: `lib/js-validator.js`,
+        file: `js-validator/index.js`,
         format: 'umd',
         name: 'validator',
         sourcemap: true,
@@ -28,7 +28,7 @@ export default {
         json(),
         cleaner({
             targets: [
-                './lib/'
+                './js-validator/'
             ]
         }),
         process.env.ENV === 'prod' && uglify()

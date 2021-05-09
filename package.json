@@ -1,6 +1,6 @@
 {
   "name": "js-validator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "基于 async-validator 库 https://github.com/yiminghe/async-validator 封装的规则验证插件，支持浏览器与node",
   "main": "index.js",
   "scripts": {
