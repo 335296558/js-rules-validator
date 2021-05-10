@@ -9,7 +9,7 @@
     "build:prod": "cross-env ENV=prod rollup -c",
     "build:dev": "cross-env ENV=dev rollup -c",
     "deploy": "npm publish",
-    "remove": "npm unpublish js-n-validator@1.0.0",
+    "remove": "npm unpublish",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
