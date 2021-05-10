@@ -1,4 +1,4 @@
-### js-n-validator 规则验证插件, 将会内置应用常用的规则验证方法、条件判断、正则...
+### js-n-validator 规则验证插件, 内置应用常用的规则验证方法、条件判断、正则, 持续扩展中，以扩展正则为主
 
 基于 async-validator 库 https://github.com/yiminghe/async-validator
 封装的规则验证插件js-n-validator，支持浏览器与node
@@ -7,8 +7,6 @@
 > 支持CMD、AMD、commonJS、ES6方式引入使用；
 
 #### 功能：与 element-ui 的表单验证相同
-
-#### 用法
 
 #### 内置规则的用法，type="内置方法名"， 如：type: 'oneNine'
 ```
