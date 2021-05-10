@@ -1,7 +1,7 @@
-### validator 规则验证插件
+### js-n-validator 规则验证插件, 将会内置应用常用的规则验证方法、条件判断、正则...
 
-基于 async-validator https://github.com/yiminghe/async-validator
-封装的规则验证插件，支持浏览器与node
+基于 async-validator 库 https://github.com/yiminghe/async-validator
+封装的规则验证插件js-n-validator，支持浏览器与node
 
 > 兼容低版本JS，基于rollup/babel build/minify；
 > 支持CMD、AMD、commonJS、ES6方式引入使用；
@@ -9,74 +9,95 @@
 #### 功能：与 element-ui 的表单验证相同
 
 #### 用法
+
+#### 内置规则的用法，type="内置方法名"， 如：type: 'oneNine'
 ```
-<script>
-  import validator from 'js-validator';
+  import validator from 'js-n-validator';
+
+  // 内置用法，message 优先使用外部定义，如果外部没有定义则使用内置 message
+
+  // 定义字段规则
   const rules = {
-      aa: [
-          { required: true, message: '请填写活动形式', trigger: 'blur' },
-          { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' },
+      p: [
+          { type:"phone", required: true },
       ],
-      bb: [
-          { type:"oneNine", required: false, trigger: 'change' },
+      b: [
+          { type:"oneNine", required: true, message: '请输入1-9 任意一个数字' },
       ],
   };
 
-  const rules2 = {
-      desc: [
-          { required: true, message: '请填写活动形式', trigger: 'blur' },
-          { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' },
+  const valid = new validator()
+  const rs = valid.censor(rules,{
+      p: '3243rf324343',
+      b: '3243rf324343',
+  })
+  // 验证不通过 rs == [{ message: '请输入正确的手机号', field: 'p' }， { message: '请输入1-9 任意一个数字', field: 'b' }]
+  // 如果 rs 为空 null 则是验证通过
+  if (rs) {
+    // 处理你验证不通过的逻辑吧...
+    return
+  }
+  // ... 处理你验证通过后的逻辑吧...
+```
+
+#### 多种方法定义规则验证，trigger事件方式， validator方法 请看 async-validator库 https://github.com/yiminghe/async-validator
+```
+  // 定义规则
+  const rules = {
+      c: [
+          { required: true, message: '请填写活动形式' },
       ],
-      pass: [
+      d: [
+          { type:"oneNine", required: false, trigger: 'blur' },
+      ],
+      by: [
           { 
               required: true,
               validator: (rule, value, callback) => {
                   if (!value) {
-                      return callback({ message: '密码不能为空' });
+                      return callback({ message: 'by 不能为空' });
                   }
                   callback();
               }, 
           },
           {
-              validator: (rule, value, callback, a, b) => {
+              validator: (rule, value, callback) => {
                   if (!/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,}$/.test(value)) {
-                      callback({ message: '请输入不小于 6 位的数字 字母混合密码' });
+                      callback({ message: '请输入不小于 6 位的数字 字母混合' });
                       return;
                   }
                   callback();
               },
           },
       ],
+      // 使用自已扩展的正则, 如下设置 test 必填字段，
+      test: [
+          { type:"idd", required: true },
+      ],
   };
 
+  // 可扩展正则, 
   const valid = new validator({
-      // 可扩展正则
       idd: {
           value: /(^\d{15}$)|(^\d{17}([0-9]|X)$)/,
           message: '请输入身份证号码'
       },
   }, true)
 
-  console.log(valid, 'valid')
   const rs = valid.censor(rules,{
-      aa:'1234', 
-      bb: '1bb234',
+      c: 'xxxx',
+      d: 'xxxx',
+      by: 'xxxx',
+      test: '3243rf324343'
   })
-  if (!rs) { // rs 不存在就是 验证通过，验证不通过会返回 规则提示
 
-  }
-  console.log(rs, 'rs')
-
-  const rs2 = valid.censor(rules2,{
-      desc:'98676', 
-      pass: 'pa',
-  })
-  console.log(rs2, 'rs2')
+  // rs == [{ message: '请输入不小于 6 位的数字 字母混合', field: 'by' },{ message: '请输入身份证号码', field: 'test' }]
+  // 如果 rs 为空 null 则是验证通过
 </script>
 ```
 #### 浏览器用法
 ```
-<script src="../lib/js-validator/index.js"></script>
+<script src="../lib/js-n-validator/index.js"></script>
 请看DEMO示例 ./demo/index.html
 
 ```
