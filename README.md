@@ -1,13 +1,14 @@
-# validator 规则验证插件
+### validator 规则验证插件
 
-基于 async-validator 库 https://github.com/yiminghe/async-validator 封装的规则验证插件，支持浏览器与node
+基于 async-validator https://github.com/yiminghe/async-validator
+封装的规则验证插件，支持浏览器与node
 
 > 兼容低版本JS，基于rollup/babel build/minify；
 > 支持CMD、AMD、commonJS、ES6方式引入使用；
 
-## 功能：与 element-ui 的表单验证相同
+#### 功能：与 element-ui 的表单验证相同
 
-## 用法
+#### 用法
 ```
 <script>
   import validator from 'js-validator';
@@ -73,10 +74,10 @@
   console.log(rs2, 'rs2')
 </script>
 ```
-## 浏览器用法
+#### 浏览器用法
 ```
-<script src="../lib/validator.js"></script>
-DEMO示例请看 ./demo/index.html
+<script src="../lib/js-validator/index.js"></script>
+请看DEMO示例 ./demo/index.html
 
 ```
 
