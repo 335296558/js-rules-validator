@@ -18,8 +18,6 @@
   ],
   "scripts": {
     "build": "rm -rf pkg && pika build --out=pkg/js-n-validator",
-    "format": "prettier --write '**/*.{ts,md,yml}' '!pkg/js-n-validator/**'",
-    "format:check": "prettier --check '**/*.{ts,md,yml}' '!pkg/js-n-validator/**'",
     "test": "jest --preset ts-jest"
   },
   "devDependencies": {
@@ -36,20 +34,13 @@
     "typescript": "^3.8.3"
   },
   "eslintConfig": {
-    "parser": "@typescript-eslint/parser",
     "parserOptions": {
       "project": "./tsconfig.json"
     },
     "plugins": [
-      "@typescript-eslint"
     ],
     "extends": [
-      "eslint:recommended",
-      "plugin:@typescript-eslint/eslint-recommended",
-      "plugin:@typescript-eslint/recommended",
-      "plugin:@typescript-eslint/recommended-requiring-type-checking",
-      "prettier",
-      "prettier/@typescript-eslint"
+
     ]
   },
   "sideEffects": true,
@@ -82,11 +73,7 @@
     "trailingComma": "es5"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.23.0",
-    "@typescript-eslint/parser": "^4.23.0",
     "async-validator": "^3.5.2",
-    "eslint": "^7.26.0",
-    "eslint-config-prettier": "^8.3.0",
-    "prettier": "^2.3.0"
+    "eslint": "^7.26.0"
   }
 }
