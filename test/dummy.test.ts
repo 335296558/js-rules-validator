@@ -1,3 +1,3 @@
 describe("dummy", () => {
-  it("should pass", () => expect(true).toBeTruthy());
+    it("should pass", () => expect(true).toBeTruthy());
 });
