@@ -17,6 +17,15 @@
     "rollup": "^1.29.0",
     "rollup-plugin-uglify": "^6.0.4"
   },
+  "keywords": [
+    "validator",
+    "verification",
+    "verify",
+    "validate",
+    "egg",
+    "node",
+    "js-n-validator"
+  ],
   "scripts": {
     "build": "env ENV=prod rollup -c",
     "dev": "rollup -c -w",
