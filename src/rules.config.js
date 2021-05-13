@@ -129,7 +129,9 @@ const create = (rules)=> {
     let functions = {} 
     for (let k in regulars) {
         const obj = regulars[k]
-        functions[k] = (...options) => fieldValidate(...options, obj)
+        functions[k] = (...options) => {
+            new fieldValidate(...options, obj)
+        }
     }
     return functions
 }

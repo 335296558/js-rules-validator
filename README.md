@@ -1,24 +1,27 @@
-#### js-n-validator 规则验证插件, 内置应用常用的规则验证方法、条件判断、正则, 持续扩展中，以扩展正则为主
+
+
+#### js-n-validator 规则验证插件, 内置应用常用的规则验证方法、条件判断、正则, 持续扩展中
 
 基于 async-validator 库 https://github.com/yiminghe/async-validator
-封装的规则验证插件 js-n-validator，支持浏览器与 node
+封装的规则验证插件js-n-validator
 
+>
+> 兼容低版本JS，基于rollup/babel build/minify；
+> 支持CMD、AMD、commonJS、ES6方式引入使用；
+>
 #### 功能：与 element-ui 的表单验证相同
 
 ### npm
-
 ```
 npm i js-n-validator
 ```
 
 ### yarn
-
 ```
 yarn add js-n-validator
 ```
 
 #### 内置规则的用法，type="内置方法名"， 如：type: 'oneNine'
-
 ```
   import validator from 'js-n-validator';
 
@@ -48,8 +51,7 @@ yarn add js-n-validator
   // ... 处理你验证通过后的逻辑吧...
 ```
 
-#### 多种方法定义规则验证，trigger 事件方式， validator 方法 请看 async-validator 库 https://github.com/yiminghe/async-validator
-
+#### 多种方法定义规则验证，trigger事件方式， validator方法 请看 async-validator库 https://github.com/yiminghe/async-validator
 ```
   // 定义规则
   const rules = {
@@ -60,14 +62,14 @@ yarn add js-n-validator
           { type:"oneNine", required: false, trigger: 'blur' },
       ],
       by: [
-          {
+          { 
               required: true,
               validator: (rule, value, callback) => {
                   if (!value) {
                       return callback({ message: 'by 不能为空' });
                   }
                   callback();
-              },
+              }, 
           },
           {
               validator: (rule, value, callback) => {
@@ -85,7 +87,7 @@ yarn add js-n-validator
       ],
   };
 
-  // 可扩展正则,
+  // 可扩展正则, 
   const valid = new validator({
       idd: {
           value: /(^\d{15}$)|(^\d{17}([0-9]|X)$)/,
@@ -104,17 +106,14 @@ yarn add js-n-validator
   // 如果 rs 为空 null 则是验证通过
 </script>
 ```
-
-#### 浏览器用法
-
+#### 浏览器用法，引用index.umd.js
 ```
-<script src="../lib/js-n-validator/index.js"></script>
-请看DEMO示例 ./demo/index.html
+<script src="./dist/js-n-validator/index.umd.js"></script>
+请看DEMO示例 ./example/browser/index.html
 
 ```
 
 ##### 版本日志
-
 ###### v1.0.0
 
 ISC

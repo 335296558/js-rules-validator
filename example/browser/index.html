@@ -2,7 +2,7 @@
 <title>js-n-validator</title>
 <head>
     <meta data-n-head="1" name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
-    <script src="../lib/js-n-validator/dist-node/index.js"></script>
+    <script src="../../dist/js-n-validator/index.umd.js"></script>
 </head>
 <body>
     <script>
@@ -14,7 +14,6 @@
             bb: [
                 { type:"oneNine2", required: false },
             ],
-
         };
 
         const rules2 = {
@@ -23,14 +22,14 @@
                 { min: 3, max: 5, message: '长度在 3 到 5 个字符' },
             ],
             pass: [
-                {
+                { 
                     required: true,
                     validator: (rule, value, callback) => {
                         if (!value) {
                             return callback({ message: '密码不能为空' });
                         }
                         callback();
-                    },
+                    }, 
                 },
                 {
                     validator: (rule, value, callback, a, b) => {
@@ -48,22 +47,40 @@
             // 可扩展正则
             oneNine2: {
                 value: /(^\d{15}$)|(^\d{17}([0-9]|X)$)/,
-                message: '请输入身份证号码22'
+                message: '请输入身份证号码'
             },
-        }, true)
+        })
 
-        console.log(valid, 'valid')
+        // console.log(valid, 'valid')
         const rs = valid.censor(rules,{
-            aa:'1234',
+            aa:'1234', 
             bb: '1bb234',
         })
-        console.log(rs, 'rs')
+        if (!rs) {
+            console.log(`\u001B[32m✓\u001B[39m 第1组参数验证通过`, 'rs1===>'+rs1+' 返回结果为空则是验证通过')
+        } else {
+            console.log(rs, '第1组参数验证 没能通过 返回一个Array')
+        }
 
         const rs2 = valid.censor(rules2,{
-            desc:'98676',
+            desc:'98676', 
             pass: 'pa',
         })
-        console.log(rs2, 'rs2')
+        if (!rs2) {
+            console.log(`\u001B[32m✓\u001B[39m 第2组参数验证通过`, 'rs2===>'+rs2+' 返回结果为空则是验证通过')
+        } else {
+            console.log(rs2, '第2组参数验证 没能通过 返回一个Array')
+        }
+
+        const rs3 = valid.censor(rules2,{
+            desc:'233', 
+            pass: 'pafds3243',
+        })
+        if (!rs3) {
+            console.log(`\u001B[32m✓\u001B[39m 第3组参数验证通过`, 'rs3===>'+rs3+' 返回结果为空则是验证通过')
+        } else {
+            console.log(rs3, '第3组参数验证 没能通过 返回一个Array')
+        }
     </script>
 </body>
 </html>
