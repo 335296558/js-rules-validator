@@ -6,19 +6,38 @@
 封装的规则验证插件js-n-validator
 
 >
-> 兼容低版本JS，基于rollup/babel build/minify；
+>
 > 支持CMD、AMD、commonJS、ES6方式引入使用；
+>
 >
 #### 功能：与 element-ui 的表单验证相同
 
-### npm
+### install
 ```
 npm i js-n-validator
+
+
+yarn add js-n-validator
+
 ```
 
-### yarn
+### 构建工具环境, Vite示例 ./example/vite-demo/src/App.vue
 ```
-yarn add js-n-validator
+import jsNvalidator from 'js-n-validator';
+...
+```
+
+### node 环境
+```
+const jsNvalidator = require('js-n-validator');
+...
+```
+
+#### 浏览器用法，引用index.umd.js
+```
+<script src="../index.umd.js"></script>
+请看DEMO示例 ./example/browser/index.html
+
 ```
 
 #### 内置规则的用法，type="内置方法名"， 如：type: 'oneNine'
@@ -106,12 +125,7 @@ yarn add js-n-validator
   // 如果 rs 为空 null 则是验证通过
 </script>
 ```
-#### 浏览器用法，引用index.umd.js
-```
-<script src="./dist/js-n-validator/index.umd.js"></script>
-请看DEMO示例 ./example/browser/index.html
 
-```
 
 ##### 版本日志
 ###### v1.0.0

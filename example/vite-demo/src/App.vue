@@ -5,7 +5,7 @@
 
 <script setup>
 import HelloWorld from './components/HelloWorld.vue';
-import jsNvalidator from '../../../dist/js-n-validator/index.esm';
+import jsNvalidator from 'js-n-validator';
 
 const rules = {
     aa: [
