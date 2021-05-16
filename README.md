@@ -12,6 +12,11 @@
 >
 #### 功能：与 element-ui 的表单验证相同
 
+
+<!--
+简单、易用、可扩展的 js-n-validator 参数验证插件, 与element-ui 的表单验证相同
+-->
+
 ### install
 ```
 npm i js-n-validator
