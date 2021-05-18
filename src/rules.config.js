@@ -29,8 +29,10 @@ const fieldValidate = (rule, value, callback, source, options, obj)=> {
         if (isEmptyValue(value) && !rule.required) {
             return callback();
         }
-        if (value && obj['value'] && !obj['value'].test(value)) {
-            return callback(obj.message || '%s is required')
+        if (value && obj['value']) {
+            if (typeof obj['value'] === 'function' && !obj['value'](value) || !obj['value'].test(value)) {
+                return callback(obj.message || '%s is required')
+            }
         }
         callback();
     }
@@ -121,6 +123,25 @@ const regulars = {
     id: {
         value: /(^\d{15}$)|(^\d{17}([0-9]|X)$)/,
         message: '请输入身份证号码'
+    },
+    isJSON: {
+        value: (str)=> {
+            if (typeof str == 'string') {
+                try {
+                    var obj = JSON.parse(str);
+                    if(obj && typeof obj == 'object'){
+                        return true;
+                    }else{
+                        return false;
+                    }
+                } catch(e) {
+                    console.log(e);
+                    return false;
+                }
+            }
+            return false;
+        },
+        message: '请输入正确的JSON格式'
     },
 }
 
