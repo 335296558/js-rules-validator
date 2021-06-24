@@ -141,7 +141,7 @@ const regulars = {
             }
             return false;
         },
-        message: '请输入正确的JSON格式'
+        message: '请输入正确的JSON格式 String'
     },
 }
 
