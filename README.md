@@ -1,5 +1,3 @@
-
-
 #### js-n-validator 规则验证插件, 内置应用常用的规则验证方法、条件判断、正则, 持续扩展中
 
 基于 async-validator 库 https://github.com/yiminghe/async-validator
@@ -62,17 +60,14 @@ const jsNvalidator = require('js-n-validator');
   };
 
   const valid = new validator()
-  const rs = valid.censor(rules,{
+  valid.censor(rules,{
       p: '3243rf324343',
       b: '3243rf324343',
+  }).then((rs)=>{
+        console.log(`\u001B[32m✓\u001B[39m 参数验证通过`, rs)
+  }).catch((err)=>{
+        console.log('err', err)
   })
-  // 验证不通过 rs == [{ message: '请输入正确的手机号', field: 'p' }， { message: '请输入1-9 任意一个数字', field: 'b' }]
-  // 如果 rs 为空 null 则是验证通过
-  if (rs) {
-    // 处理你验证不通过的逻辑吧...
-    return
-  }
-  // ... 处理你验证通过后的逻辑吧...
 ```
 
 #### 多种方法定义规则验证，trigger事件方式， validator方法 请看 async-validator库 https://github.com/yiminghe/async-validator
@@ -119,15 +114,16 @@ const jsNvalidator = require('js-n-validator');
       },
   }, true)
 
-  const rs = valid.censor(rules,{
+  valid.censor(rules,{
       c: 'xxxx',
       d: 'xxxx',
       by: 'xxxx',
       test: '3243rf324343'
+  }).then((rs)=>{
+        console.log(`\u001B[32m✓\u001B[39m 参数验证通过`, rs)
+  }).catch((err)=>{
+        console.log('err', err)
   })
-
-  // rs == [{ message: '请输入不小于 6 位的数字 字母混合', field: 'by' },{ message: '请输入身份证号码', field: 'test' }]
-  // 如果 rs 为空 null 则是验证通过
 </script>
 ```
 
