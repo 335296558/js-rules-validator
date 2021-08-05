@@ -34,7 +34,7 @@ export default class jsNvalidator {
         this.debug && console.log(query)
         this.debug && console.log(rules)
         const validator = new AsyncValidator(rules)
-        return new Promise(function(resolve, reject){
+        return new Promise((resolve, reject)=>{
             validator.validate(query, (errors, fields)=>{
                 this.debug && console.log('errors', errors)
                 this.debug && console.log('fields', fields)

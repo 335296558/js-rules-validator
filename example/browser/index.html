@@ -55,7 +55,7 @@
                 value: /(^\d{15}$)|(^\d{17}([0-9]|X)$)/,
                 message: '请输入身份证号码'
             },
-        })
+        }, true)
 
         valid.censor(rules,{
             aa:'1', 
@@ -63,15 +63,15 @@
             cc: '{"a":"22"}'
         }).then((rs)=>{
             console.log(`\u001B[32m✓\u001B[39m 参数验证通过`, rs)
-        }).catch((err)=>{
-            console.log('err', err)
+        }).catch((err, a)=>{
+            console.log('err===>', err)
         })
         
         valid.censor(rules2,{
             desc:'98676', 
             pass: 'pa',
         }).then((rs)=>{
-            console.log(`\u001B[32m✓\u001B[39m 参数验证通过`, rs)
+            console.log(`\u001B[32m✓\u001B[39m 参数验证通过 2`, rs)
         }).catch((err)=>{
             console.log('err', err)
         })
@@ -80,7 +80,7 @@
             desc:'233', 
             pass: 'pafds3243',
         }).then((rs)=>{
-            console.log(`\u001B[32m✓\u001B[39m 参数验证通过`, rs)
+            console.log(`\u001B[32m✓\u001B[39m 参数验证通过 3`, rs)
         }).catch((err)=>{
             console.log('err', err)
         })

@@ -37,7 +37,7 @@ const fieldValidate = (rule, value, callback, source, options, obj)=> {
                 return callback(obj.message || '%s is required')
             }
         }
-        callback();
+        return callback();
     }
 }
 
