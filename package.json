@@ -1,6 +1,6 @@
 {
   "name": "js-n-validator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/js-n-validator/index.js",
   "module": "dist/js-n-validator/index.esm.js",
   "browser": "dist/js-n-validator/index.umd.js",
