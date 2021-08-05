@@ -57,15 +57,12 @@
             },
         })
 
-        
-        console.log(valid, 'valid')
         valid.censor(rules,{
             aa:'1', 
             bb: '45088775564758765411111',
             cc: '{"a":"22"}'
         }).then((rs)=>{
-            console.log(`\u001B[32m✓\u001B[39m 第1组参数验证通过`, 'rs1===>'+rs+' 返回结果为空则是验证通过')
-            console.log('rs', rs)
+            console.log(`\u001B[32m✓\u001B[39m 参数验证通过`, rs)
         }).catch((err)=>{
             console.log('err', err)
         })
@@ -74,8 +71,7 @@
             desc:'98676', 
             pass: 'pa',
         }).then((rs)=>{
-            console.log(`\u001B[32m✓\u001B[39m 第1组参数验证通过`, 'rs2===>'+rs+' 返回结果为空则是验证通过')
-            console.log('rs', rs)
+            console.log(`\u001B[32m✓\u001B[39m 参数验证通过`, rs)
         }).catch((err)=>{
             console.log('err', err)
         })
@@ -84,8 +80,7 @@
             desc:'233', 
             pass: 'pafds3243',
         }).then((rs)=>{
-            console.log(`\u001B[32m✓\u001B[39m 第1组参数验证通过`, 'rs2===>'+rs+' 返回结果为空则是验证通过')
-            console.log('rs', rs)
+            console.log(`\u001B[32m✓\u001B[39m 参数验证通过`, rs)
         }).catch((err)=>{
             console.log('err', err)
         })

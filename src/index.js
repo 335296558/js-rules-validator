@@ -31,13 +31,13 @@ export default class jsNvalidator {
             console.error(red, 'censor 方法的 验证规则 与 验证参数 不能为空, censor(验证规则, 验证参数)');
             return false
         }
-        this.debug && console.log(query);
-        this.debug && console.log(rules);
-        const validator = new AsyncValidator(rules);
+        this.debug && console.log(query)
+        this.debug && console.log(rules)
+        const validator = new AsyncValidator(rules)
         return new Promise(function(resolve, reject){
             validator.validate(query, (errors, fields)=>{
-                console.log('errors', errors)
-                console.log('fields', fields)
+                this.debug && console.log('errors', errors)
+                this.debug && console.log('fields', fields)
                 if (!errors) {
                     resolve(null)
                     return
