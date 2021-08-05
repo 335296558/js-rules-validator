@@ -30,7 +30,10 @@ const fieldValidate = (rule, value, callback, source, options, obj)=> {
             return callback();
         }
         if (value && obj['value']) {
-            if (typeof obj['value'] === 'function' && !obj['value'](value) || !obj['value'].test(value)) {
+            if (typeof obj['value'] === 'object' && !obj['value'].test(value)) {
+                return callback(obj.message || '%s is required')
+            }
+            if (typeof obj['value'] === 'function' && !obj['value'](value)) {
                 return callback(obj.message || '%s is required')
             }
         }
@@ -135,7 +138,6 @@ const regulars = {
                         return false;
                     }
                 } catch(e) {
-                    console.log(e);
                     return false;
                 }
             }
@@ -151,7 +153,7 @@ const create = (rules)=> {
     for (let k in regulars) {
         const obj = regulars[k]
         functions[k] = (...options) => {
-            new fieldValidate(...options, obj)
+            return new fieldValidate(...options, obj)
         }
     }
     return functions
