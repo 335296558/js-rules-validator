@@ -42,8 +42,8 @@ export default class jsNvalidator {
                     resolve(null)
                     return
                 }
-                reject(errors)
-            });
+                resolve(errors)
+            })
         })
     }
 };

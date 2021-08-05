@@ -62,6 +62,10 @@
             bb: '45088775564758765411111',
             cc: '{"a":"22"}'
         }).then((rs)=>{
+            if (rs){
+                console.log(` 参数验证不通过 DEMO1`, rs)
+                return
+            }
             console.log(`\u001B[32m✓\u001B[39m 参数验证通过`, rs)
         }).catch((err, a)=>{
             console.log('err===>', err)
@@ -71,21 +75,30 @@
             desc:'98676', 
             pass: 'pa',
         }).then((rs)=>{
+            if (rs){
+                console.log(` 参数验证不通过 DEMO2`, rs)
+                return
+            }
             console.log(`\u001B[32m✓\u001B[39m 参数验证通过 2`, rs)
         }).catch((err)=>{
             console.log('err', err)
         })
 
-        const rs3 = valid.censor(rules2,{
-            desc:'233', 
-            pass: 'pafds3243',
-        }).then((rs)=>{
-            console.log(`\u001B[32m✓\u001B[39m 参数验证通过 3`, rs)
-        }).catch((err)=>{
-            console.log('err', err)
-        })
-
-        
+        function test(){
+            (async ()=>{
+                const rs = await valid.censor(rules2,{
+                    desc:'1', 
+                    pass: 'pafds3243',
+                })
+                if (rs){
+                    console.log(` 参数验证不通过 DEMO3`, rs)
+                    return
+                }
+                console.log(`\u001B[32m✓\u001B[39m 参数验证通过 2`, rs)
+            })();
+        }
+        test()
+            
     </script>
 </body>
 </html>
