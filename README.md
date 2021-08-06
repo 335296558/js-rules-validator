@@ -1,7 +1,7 @@
-#### js-n-validator 规则验证插件, 内置应用常用的规则验证方法、条件判断、正则, 持续扩展中
+#### js-rules-validator 规则验证插件, 内置应用常用的规则验证方法、条件判断、正则, 持续扩展中
 
 基于 async-validator 库 https://github.com/yiminghe/async-validator
-扩展封装的规则验证插件js-n-validator
+扩展封装的规则验证插件js-rules-validator
 
 >
 >
@@ -12,27 +12,27 @@
 
 
 <!--
-简单、易用、可扩展的 js-n-validator 参数验证插件, 与element-ui 的表单验证相同
+简单、易用、可扩展的 js-rules-validator 参数验证插件, 与element-ui 的表单验证相同
 -->
 
 ### install
 ```
-npm i js-n-validator
+npm i js-rules-validator
 
 
-yarn add js-n-validator
+yarn add js-rules-validator
 
 ```
 
 ### 构建工具环境, Vite示例 ./example/vite-demo/src/App.vue
 ```
-import jsNvalidator from 'js-n-validator';
+import jsNvalidator from 'js-rules-validator';
 ...
 ```
 
 ### node 环境
 ```
-const jsNvalidator = require('js-n-validator');
+const jsNvalidator = require('js-rules-validator');
 ...
 ```
 
@@ -45,7 +45,7 @@ const jsNvalidator = require('js-n-validator');
 
 #### 内置规则的用法，type="内置方法名"， 如：type: 'oneNine'
 ```
-  import validator from 'js-n-validator';
+  import validator from 'js-rules-validator';
 
   // 内置用法，message 优先使用外部定义，如果外部没有定义则使用内置 message
 
