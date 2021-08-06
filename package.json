@@ -1,6 +1,6 @@
 {
   "name": "js-rules-validator",
-  "version": "1.0.9",
+  "version": "1.0.0",
   "main": "dist/js-rules-validator/index.js",
   "module": "dist/js-rules-validator/index.esm.js",
   "browser": "dist/js-rules-validator/index.umd.js",
