@@ -64,6 +64,10 @@ const jsNvalidator = require('js-n-validator');
       p: '3243rf324343',
       b: '3243rf324343',
   }).then((rs)=>{
+        if (rs){
+            console.log(` 参数验证不通过 DEMO1`, rs)
+            return
+        }
         console.log(`\u001B[32m✓\u001B[39m 参数验证通过`, rs)
   }).catch((err)=>{
         console.log('err', err)
@@ -120,6 +124,10 @@ const jsNvalidator = require('js-n-validator');
       by: 'xxxx',
       test: '3243rf324343'
   }).then((rs)=>{
+        if (rs){
+            console.log(` 参数验证不通过 DEMO1`, rs)
+            return
+        }
         console.log(`\u001B[32m✓\u001B[39m 参数验证通过`, rs)
   }).catch((err)=>{
         console.log('err', err)
