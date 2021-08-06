@@ -1,9 +1,9 @@
 {
-  "name": "js-n-validator",
-  "version": "1.0.8",
-  "main": "dist/js-n-validator/index.js",
-  "module": "dist/js-n-validator/index.esm.js",
-  "browser": "dist/js-n-validator/index.umd.js",
+  "name": "js-rules-validator",
+  "version": "1.0.9",
+  "main": "dist/js-rules-validator/index.js",
+  "module": "dist/js-rules-validator/index.esm.js",
+  "browser": "dist/js-rules-validator/index.umd.js",
   "dependencies": {
     "async-validator": "^3.5.2",
     "ms": "^2.0.0"
@@ -24,7 +24,7 @@
     "validate",
     "egg",
     "node",
-    "js-n-validator"
+    "js-rules-validator"
   ],
   "scripts": {
     "build": "env ENV=prod rollup -c",
@@ -32,8 +32,8 @@
     "test": "node test/test.js",
     "pretest": "npm run build",
     "deploy": "npm publish --registry=https://registry.npmjs.org/",
-    "remove": "npm unpublish --registry https://registry.npmjs.org/ js-n-validator@请输入你的版本号",
-    "deprecate": "npm deprecate js-n-validator@'< 1.0.8' 'bug'"
+    "remove": "npm unpublish --registry https://registry.npmjs.org/ js-rules-validator@请输入你的版本号",
+    "deprecate": "npm deprecate js-rules-validator@'< 1.0.8' 'bug'"
   },
   "files": [
     "dist"

@@ -25,7 +25,6 @@ const isEmptyValue = (val, type)=> {
 // 字段验证
 const fieldValidate = (rule, value, callback, source, options, obj)=> {
     let validate = (rule.required || !rule.required) && source.hasOwnProperty(rule.field);
-    console.log('validate', validate, 'value=='+value)
     if (validate) {
         if (isEmptyValue(value) && !rule.required) {
             return callback();
