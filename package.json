@@ -32,7 +32,8 @@
     "test": "node test/test.js",
     "pretest": "npm run build",
     "deploy": "npm publish --registry=https://registry.npmjs.org/",
-    "remove": "npm unpublish --registry https://registry.npmjs.org/ js-n-validator@请输入你的版本号"
+    "remove": "npm unpublish --registry https://registry.npmjs.org/ js-n-validator@请输入你的版本号",
+    "deprecate": "npm deprecate js-n-validator@'< 1.0.8' 'bug'"
   },
   "files": [
     "dist"
