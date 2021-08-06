@@ -25,6 +25,7 @@ const isEmptyValue = (val, type)=> {
 // 字段验证
 const fieldValidate = (rule, value, callback, source, options, obj)=> {
     let validate = (rule.required || !rule.required) && source.hasOwnProperty(rule.field);
+    console.log('validate', validate, 'value=='+value)
     if (validate) {
         if (isEmptyValue(value) && !rule.required) {
             return callback();
@@ -39,6 +40,10 @@ const fieldValidate = (rule, value, callback, source, options, obj)=> {
         }
         return callback();
     }
+    if (rule.required) {
+        return callback(obj.message || '%s is required')
+    }
+    return callback();
 }
 
 // 正则规则配置

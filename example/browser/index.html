@@ -23,6 +23,20 @@
         };
 
         const rules2 = {
+            username: [
+                { required: true, message: '用户名不能为空' },
+                {
+                    required: true,
+                    validator(rule, value, callback) {
+                        if (value && value.length<4) {
+                            callback({ message: '用户名最少4位字符以上' }); 
+                            return;
+                        }
+                        // 验证通过
+                        callback(); 
+                    }
+                },
+            ],
             desc: [
                 { required: true, message: '请填写活动形式' },
                 { min: 3, max: 5, message: '长度在 3 到 5 个字符' },
@@ -38,7 +52,7 @@
                     }, 
                 },
                 {
-                    validator: (rule, value, callback, a, b) => {
+                    validator: (rule, value, callback) => {
                         if (!/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,}$/.test(value)) {
                             callback({ message: '请输入不小于 6 位的数字 字母混合密码' });
                             return;
@@ -58,9 +72,10 @@
         }, true)
 
         valid.censor(rules,{
-            aa:'1', 
-            bb: '45088775564758765411111',
-            cc: '{"a":"22"}'
+            // username: 111111,
+            // vv:'1', 
+            // cccc: '45088775564758765411111',
+            // ddd: '{"a":"22"}'
         }).then((rs)=>{
             if (rs){
                 console.log(` 参数验证不通过 DEMO1`, rs)
@@ -71,33 +86,33 @@
             console.log('err===>', err)
         })
         
-        valid.censor(rules2,{
-            desc:'98676', 
-            pass: 'pa',
-        }).then((rs)=>{
-            if (rs){
-                console.log(` 参数验证不通过 DEMO2`, rs)
-                return
-            }
-            console.log(`\u001B[32m✓\u001B[39m 参数验证通过 2`, rs)
-        }).catch((err)=>{
-            console.log('err', err)
-        })
+        // valid.censor(rules2,{
+        //     desc:'98676', 
+        //     pass: 'pa',
+        // }).then((rs)=>{
+        //     if (rs){
+        //         console.log(` 参数验证不通过 DEMO2`, rs)
+        //         return
+        //     }
+        //     console.log(`\u001B[32m✓\u001B[39m 参数验证通过 2`, rs)
+        // }).catch((err)=>{
+        //     console.log('err', err)
+        // })
 
-        function test(){
-            (async ()=>{
-                const rs = await valid.censor(rules2,{
-                    desc:'1', 
-                    pass: 'pafds3243',
-                })
-                if (rs){
-                    console.log(` 参数验证不通过 DEMO3`, rs)
-                    return
-                }
-                console.log(`\u001B[32m✓\u001B[39m 参数验证通过 2`, rs)
-            })();
-        }
-        test()
+        // function test(){
+        //     (async ()=>{
+        //         const rs = await valid.censor(rules2,{
+        //             desc:'1', 
+        //             pass: 'pafds3243',
+        //         })
+        //         if (rs){
+        //             console.log(` 参数验证不通过 DEMO3`, rs)
+        //             return
+        //         }
+        //         console.log(`\u001B[32m✓\u001B[39m 参数验证通过 2`, rs)
+        //     })();
+        // }
+        // test()
             
     </script>
 </body>
